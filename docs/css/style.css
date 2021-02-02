@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+.pageTitle {
+    text-align: center;
+    color: #ffffff;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.main article img {
+    width: 100%;
+}

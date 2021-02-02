@@ -3,15 +3,22 @@
 function data(){
     // set variables
     const main = document.querySelector('.main')
-    const url = 'http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=thrash-metal&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&format=json'
+    const url = 'http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=metalcore&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&format=json'
 
 
     // render data
     const render = function (albums) {
-        albums.forEach(
-            //create album card
-            //create h2
-            //fill h2 with name of album
+        albums.forEach(singleAlbum => {
+            const albumCard = document.createElement("article")
+            const albumName = document.createElement("h2")
+            const albumArt = document.createElement("img")
+                const image = singleAlbum.image[3]['#text']
+                albumName.innerText = singleAlbum.name
+                albumArt.src = image
+                console.log(image)
+                main.appendChild(albumCard)
+                albumCard.appendChild(albumArt)
+            }
         )
     }
 
@@ -21,6 +28,7 @@ function data(){
         if (request.status >= 200 && request.status < 400) {
             // Success!
             const data = JSON.parse(request.responseText)
+            //remove albums from wrapper element
             const allAlbums = data.albums.album
             console.log(allAlbums)
             render(allAlbums);

@@ -1,6 +1,6 @@
 # Web App From Scratch @cmda-minor-web 2020 - 2021
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+[live link](http://web-app-from-scratch-2021.sharonv33.vercel.app/)
 
 ## about the app
 This app will help you to discover new and awesome music in the best genre there is, thrash metal. Browse through the 
