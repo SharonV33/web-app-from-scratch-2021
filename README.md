@@ -2,9 +2,9 @@
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+## about the app
+This app will help you to discover new and awesome music in the best genre there is, thrash metal. Browse through the 
+latest and most popular thrash albums there are and get inspired by new bands. 
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
@@ -18,4 +18,5 @@
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+
+MIT License
