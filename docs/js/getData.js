@@ -18,7 +18,6 @@ function data(){
                 albumArt.src = image
                 console.log(image)
                 main.appendChild(albumCard).id = albumId
-                main.href =
                 albumCard.appendChild(albumName)
                 albumCard.appendChild(albumArt)
             }
