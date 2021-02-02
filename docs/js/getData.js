@@ -1,5 +1,4 @@
-
-//function to fetch data from last.fm api
+//function to fetch data from last.fm api and render it's data
 function data(){
     // set variables
     const main = document.querySelector('.main')
@@ -12,11 +11,14 @@ function data(){
             const albumCard = document.createElement("article")
             const albumName = document.createElement("h2")
             const albumArt = document.createElement("img")
-                const image = singleAlbum.image[3]['#text']
+            const image = singleAlbum.image[3]['#text']
+            const albumId = singleAlbum.mbid
+
                 albumName.innerText = singleAlbum.name
                 albumArt.src = image
                 console.log(image)
-                main.appendChild(albumCard)
+                main.appendChild(albumCard).id = albumId
+                main.href =
                 albumCard.appendChild(albumName)
                 albumCard.appendChild(albumArt)
             }
