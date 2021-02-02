@@ -17,6 +17,7 @@ function data(){
                 albumArt.src = image
                 console.log(image)
                 main.appendChild(albumCard)
+                albumCard.appendChild(albumName)
                 albumCard.appendChild(albumArt)
             }
         )
