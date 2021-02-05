@@ -2,7 +2,7 @@ body {
     background-color: black;
 }
 
-.pageTitle {
+h1 {
     text-align: center;
     color: #ffffff;
     padding: 1em 0;

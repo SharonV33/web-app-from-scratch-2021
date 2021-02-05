@@ -1,7 +1,7 @@
 //function to fetch data from last.fm api and render it's data
 function data(){
     // set variables
-    const main = document.querySelector('.main')
+    const main = document.querySelector('main')
     const url = 'https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=metalcore&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&format=json'
 
 
