@@ -6,7 +6,7 @@
 This app will help you to discover new and awesome music in the best genre there is, metal. Browse through the 
 latest and most popular thrash albums there are and get inspired by new bands. 
 
-<img src="https://i.ibb.co/3ycjH1x/Screenshot-2021-02-05-at-10-07-38.png">
+<img src="https://i.ibb.co/dW3NVFC/smaller.jpg">
 
 ##Tabe of content
 * installing
