@@ -8,12 +8,13 @@ body {
     padding: 1em 0;
 }
 
-.main {
+main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.main article {
+/*styling of articles, these are generated in JS*/
+main article {
     position: relative;
     display: flex;
     justify-content: center;
@@ -21,7 +22,7 @@ body {
     cursor: pointer;
 }
 
-.main article img {
+main article img {
     width: 100%;
 }
 
