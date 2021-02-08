@@ -1,6 +1,10 @@
 import getData from './getData.js'
 import render from './buildContent.js'
 
-getData()
-console.log(getData())
-render(getData)
+
+async function initialise() {
+    const allAlbums = await getData()
+    render(allAlbums)
+}
+
+initialise()

@@ -12,7 +12,7 @@ function render (albums) {
 
             albumName.innerText = singleAlbum.name
             albumArt.src = image
-            main.appendChild(albumCard).href = '#' + albumId
+            main.appendChild(albumCard).href = '#albumID=' + albumId
             albumCard.appendChild(albumName)
             albumCard.appendChild(albumArt)
         }

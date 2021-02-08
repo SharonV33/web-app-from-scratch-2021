@@ -46,6 +46,7 @@ of album art. This structure is repeated for each album, making it easy to creat
 - [x] overview of albums bades on data from api
 - [ ] view album details based on selected album
 - [ ] responsive layout
+- [ ] change genre
 - [ ] improved design
 
 
