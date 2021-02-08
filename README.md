@@ -14,7 +14,7 @@ latest and most popular thrash albums there are and get inspired by new bands.
 * last.fm api
 * wishlist of features
 
-##installing
+## installing
 clone the repo
 ```
 git clone https://github.com/SharonV33/web-app-from-scratch-2021
