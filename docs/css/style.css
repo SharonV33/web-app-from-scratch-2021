@@ -13,8 +13,8 @@ main {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-/*styling of articles, these are generated in JS*/
-main a {
+/*styling of album tiles, these are generated in JS*/
+main a{
     position: relative;
     display: flex;
     justify-content: center;
@@ -26,9 +26,14 @@ main a img {
     width: 100%;
 }
 
-a > h2 {
+a h2{
     display: none;
     transition: all 0.5s ease-in-out;
+}
+
+a:visited {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 a:hover > h2 {
@@ -42,4 +47,32 @@ a:hover > h2 {
     margin: 0!important;
     padding-top: 50%;
 
+}
+
+/*single album styling*/
+main article {
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-template: 1fr 1fr;
+    grid-row-gap: 3em;
+    width: 80vw;
+}
+
+article h2,
+article p:first-of-type {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+article p:first-of-type {
+    margin-top: 5em;
+}
+
+article img {
+  height: 100%;
+}
+
+article p:last-of-type {
+    grid-column:1 / span 2;
 }
