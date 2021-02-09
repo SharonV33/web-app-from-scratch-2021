@@ -44,7 +44,8 @@ of album art. This structure is repeated for each album, making it easy to creat
 
 ## Wishlist of features
 - [x] overview of albums bades on data from api
-- [ ] view album details based on selected album
+- [x] view album details based on selected album
+- [ ] filter albums with no mbid
 - [ ] responsive layout
 - [ ] change genre
 - [ ] improved design

@@ -48,7 +48,6 @@ function renderDetail (album) {
     albumTracks.forEach(function (track) {
         let li = document.createElement('li')
         trackList.appendChild(li)
-        console.log(track)
         li.innerHTML += track.name
     })
 
