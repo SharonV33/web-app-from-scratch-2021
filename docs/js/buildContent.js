@@ -1,7 +1,7 @@
-export default render
+export default renderOverview
 
 // render data
-function render (albums) {
+function renderOverview (albums) {
     albums.forEach(singleAlbum => {
             const main = document.querySelector('main')
             const albumCard = document.createElement("a")
