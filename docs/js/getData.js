@@ -17,7 +17,7 @@ async function getData() {
 }
 
 async function getAlbumDetails(mbid) {
-    const url = 'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&mbid=' + mbid + '&format=json'
+    const url = 'https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&mbid=' + mbid + '&format=json'
     let singleAlbum
 
     return fetch(url)

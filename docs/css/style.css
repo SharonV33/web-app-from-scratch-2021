@@ -54,7 +54,7 @@ main article {
     color: #ffffff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-template: 1fr 1fr;
+    grid-template-row: 1fr 1fr;
     grid-row-gap: 3em;
     width: 80vw;
 }
@@ -71,6 +71,7 @@ article p:first-of-type {
 
 article img {
   height: 100%;
+    width: 100%;
 }
 
 article p:last-of-type {
