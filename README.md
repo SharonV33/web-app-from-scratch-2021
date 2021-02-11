@@ -12,6 +12,7 @@ latest and most popular thrash albums there are and get inspired by new bands.
 * installing
 * Usage and features
 * last.fm api
+* actor and interaction diagram
 * wishlist of features
 
 ## installing
@@ -19,6 +20,19 @@ clone the repo
 ```
 git clone https://github.com/SharonV33/web-app-from-scratch-2021
 ```
+install a http server
+```
+npm install http-server
+```
+run the app with the server
+```
+http-server PATH-TO-DIRECTORY/web-app-from-scratch-2021/docs
+```
+navigate to localhost in the browser
+```
+http://127.0.0.1:8080
+```
+
 
 ## Usage and features
 This web app can be used to get inspiration for new music to listen to. Some features are:
@@ -41,14 +55,25 @@ By using a XMLHttpRequest on the link, I was able to get the data quite easily. 
 Each album has a name, a url to the related page on last.fm, a unique identifyer, information about the artist and 4 formats
 of album art. This structure is repeated for each album, making it easy to create a template which I can fill with data.
 
+## actor and interaction diagram
+My actor diagram consists of 4 actors; main, router, getData and buildContent. These actors handle different parts of my project.
+The main actor focuses on including all the other actors and calling the router. My router actor checks the current url and
+calls the correct functions in the getData and buildContent actors based on the desired content. The getData actor has two
+functions in it, one to fetch all the albums and one to fetch information about a single album. Finally, the buildContent actor
+builds up the HTML to show the desired content based on the url.
+<img src="https://i.ibb.co/g9nB6Bg/image.png" alt="actor diagram">
+
+With my interaction diagram I show how the user goes through the app. You can clearly see the path the user walks
+while navigating through the features of the app.
+<img src="https://i.ibb.co/12STb0G/image.png" alt="interaction diagram">
 
 ## Wishlist of features
-- [x] overview of albums bades on data from api
+- [x] overview of albums based on data from api
 - [x] view album details based on selected album
 - [ ] filter albums with no mbid
+- [ ] improved design
 - [ ] responsive layout
 - [ ] change genre
-- [ ] improved design
 
 
 MIT License
