@@ -1,12 +1,12 @@
-export { renderOverview, renderDetail}
+export { renderOverview, renderDetail }
 
-// render data
+// render overview page with all albums
 function renderOverview (albums) {
     albums.forEach(singleAlbum => {
             const main = document.querySelector('main')
-            const albumCard = document.createElement("a")
-            const albumName = document.createElement("h2")
-            const albumArt = document.createElement("img")
+            const albumCard = document.createElement('a')
+            const albumName = document.createElement('h2')
+            const albumArt = document.createElement('img')
             const image = singleAlbum.image[3]['#text']
             const albumId = singleAlbum.mbid
 
@@ -22,12 +22,12 @@ function renderOverview (albums) {
 function renderDetail (album) {
     //create variables with html elements to build up a detail page
     const main = document.querySelector('main')
-    const albumCard = document.createElement("article")
-    const albumName = document.createElement("h2")
-    const albumArt = document.createElement("img")
-    const published = document.createElement("p")
-    const trackList = document.createElement("ul")
-    const summary = document.createElement("p")
+    const albumCard = document.createElement('article')
+    const albumName = document.createElement('h2')
+    const albumArt = document.createElement('img')
+    const published = document.createElement('p')
+    const trackList = document.createElement('ul')
+    const summary = document.createElement('p')
 
     //create variables with data from the last.fm api
     const artist = album.artist
@@ -38,7 +38,7 @@ function renderDetail (album) {
     const albumSummary = album.wiki.content
 
     //fill html elements with content from last.fm
-    main.innerHTML = "";
+    main.innerHTML = '';
     albumArt.src = image
     albumName.innerText = albumTitle + ' - ' + artist
     published.innerText = publishedDate

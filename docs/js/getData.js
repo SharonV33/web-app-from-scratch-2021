@@ -14,6 +14,9 @@ async function getData() {
             allAlbums = data.albums.album
             return allAlbums
     })
+        .catch(error => {
+            console.log(error)
+        })
 }
 
 async function getAlbumDetails(mbid) {
@@ -27,6 +30,9 @@ async function getAlbumDetails(mbid) {
             //unwrap the data from outer layers and return the album data
             singleAlbum = data.album
             return singleAlbum
+        })
+        .catch(error => {
+            console.log(error)
         })
 
 }

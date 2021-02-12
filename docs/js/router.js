@@ -1,11 +1,10 @@
-import {getAlbumDetails, getData} from "./getData";
-import {renderDetail, renderOverview} from "./buildContent";
+import { getAlbumDetails, getData } from './getData.js'
+import { renderDetail, renderOverview } from './buildContent.js'
 
 export { handleRoutes }
 
 function handleRoutes() {
     routie({
-        //#giphy/425367
         'albumID=:id': id => {
             getAlbumDetails(id).then(data => {
                 renderDetail(data)
@@ -15,6 +14,6 @@ function handleRoutes() {
             .then(data => {
                 renderOverview(data)
             })
-
     })
 }
+
