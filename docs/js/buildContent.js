@@ -65,12 +65,18 @@ function renderDetail (album) {
 
 }
 
-function renderErrorPage () {
+function renderErrorPage (message) {
     const main = document.querySelector('main')
     const message = document.createElement('h2')
+    const backButton = document.createElement('a')
 
 
-    message.innerText = "kutzooi"
+    message.innerText = message
+    backButton.innerText = 'back'
+    backButton.href = '/'
+
     main.appendChild(message)
-    console.log("dikke error")
+    main.appendChild(backButton)
+
+    // console.log("dikke error")
 }

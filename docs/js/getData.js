@@ -13,6 +13,9 @@ async function getData() {
         const response = await fetch(url)
         const jsonResponse = await response.json()
 
+    if (!jsonRsponse.albums.album) {
+        throw "unable to load albums"
+    }
     //filter out albums without mbid and return albums
     //without outer array layers
     return jsonResponse.albums.album
@@ -33,6 +36,10 @@ async function getAlbumDetails(mbid) {
     const response = await fetch(url)
     const jsonResponse = await response.json()
 
+   // if the api returns a faulty result, throw the error
+   if(!jsonResponse.album) {
+       throw "album not found"
+    }
     //return single album information without
     //outer array layer
     return jsonResponse.album

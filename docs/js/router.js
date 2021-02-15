@@ -10,7 +10,7 @@ function handleRoutes() {
             renderOverview(allAlbums)
         }
         catch {
-            renderErrorPage()
+            renderErrorPage('there was an error loading the content, please try again later')
         }
     })
 
@@ -20,7 +20,7 @@ function handleRoutes() {
             renderDetail(singleAlbum)
         }
         catch (error){
-            renderErrorPage()
+            renderErrorPage('there was an error trying to show you data about the selected album, please try again later')
 
         }
     })
