@@ -10,13 +10,19 @@ async function getData() {
     const url = endpoint + query + genre + key + format
 
     //fetch data and format it to json
-    const response = await fetch(url)
-    const jsonResponse = await response.json()
+    try {
+        const response = await fetch(url)
+        const jsonResponse = await response.json()
+        return jsonResponse.albums.album
+            .filter((album) => album.mbid)
+    }
+    catch (error) {
+        document.querySelector('main').innerText = 'error while fetching'
+    }
 
     //filter out albums without mbid and return albums
     //without outer array layers
-    return jsonResponse.albums.album
-        .filter((album) => album.mbid)
+
 }
 
 //fetch single album information
@@ -29,11 +35,11 @@ async function getAlbumDetails(mbid) {
     const format = '&format=json'
     const url = endpoint + query + key + albumid + format
 
-    //fetch data and format it to json
-    const response = await fetch(url)
-    const jsonResponse = await response.json()
+        //fetch data and format it to json
+         const response = await fetch(url)
+        const jsonResponse = response.json()
 
-    //return single album information without
-    //outer array layer
-    return jsonResponse.album
+        //return single album information without
+        //outer array layer
+        return jsonResponse.album
 }

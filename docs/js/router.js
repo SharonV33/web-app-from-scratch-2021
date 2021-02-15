@@ -3,19 +3,33 @@ import { renderDetail, renderOverview } from './buildContent.js'
 
 export { handleRoutes }
 
-routie('/', async function home() {
-    const data = await getData()
-    renderOverview(data)
-})
-
 function handleRoutes() {
-    routie('/', async function() {
+    routie('', async function() {
         const allAlbums = await getData()
         renderOverview(allAlbums)
     })
 
-    routie('albumID/?:id', async function(id) {
-        const singleAlbum = await getAlbumDetails(id)
-        renderDetail(singleAlbum)
+    routie('albumID/:id', async function(id) {
+        try {
+            const singleAlbum = await getAlbumDetails(id)
+            renderDetail(singleAlbum)
+        }
+        catch (exception) {
+            document.querySelector('main').innerText = exception
+
+        }
     })
 }
+
+//working routie code
+// routie({
+//     'albumID=:id': id => {
+//         getAlbumDetails(id).then(data => {
+//             renderDetail(data)
+//         })
+//     },
+//     '/': getData()
+//         .then(data => {
+//             renderOverview(data)
+//         })
+// })

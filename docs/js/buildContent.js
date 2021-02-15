@@ -56,7 +56,7 @@ function renderDetail (album) {
 
     //append elements to container
     main.appendChild(albumCard)
-    albumCard.appendChild(backButton)
+    main.appendChild(backButton)
     albumCard.appendChild(albumArt)
     albumCard.appendChild(albumName)
     albumCard.appendChild(published)
