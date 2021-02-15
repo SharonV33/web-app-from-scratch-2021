@@ -10,18 +10,15 @@ async function getData() {
     const url = endpoint + query + genre + key + format
 
     //fetch data and format it to json
-    try {
         const response = await fetch(url)
         const jsonResponse = await response.json()
-        return jsonResponse.albums.album
-            .filter((album) => album.mbid)
-    }
-    catch (error) {
-        document.querySelector('main').innerText = 'error while fetching'
-    }
 
     //filter out albums without mbid and return albums
     //without outer array layers
+        return jsonResponse.albums.album
+            .filter((album) => album.mbid)
+
+
 
 }
 
