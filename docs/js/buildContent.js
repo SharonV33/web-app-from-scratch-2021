@@ -1,4 +1,4 @@
-export { renderOverview, renderDetail }
+export { renderOverview, renderDetail, renderErrorPage }
 
 // render overview page with all albums
 function renderOverview (albums) {
@@ -31,9 +31,9 @@ function renderDetail (album) {
     const backButton = document.createElement('a')
 
     //create variables with data from the last.fm api
-    const artist = album.artist
-    const albumTitle = album.name
-    const image = album.image[4]['#text']
+    const artist = album.artist ? album.artist : ''
+    const albumTitle = album.name ? album.name : ''
+    const image = album.image[4]['#text'] ? album.image[4]['#text'] : ''
     const publishedDate = album.wiki ? album.wiki.published : ''
     const albumTracks = album.tracks.track
     const albumSummary = album.wiki ? album.wiki.content : ''
@@ -63,4 +63,14 @@ function renderDetail (album) {
     albumCard.appendChild(trackList)
     albumCard.appendChild(summary)
 
+}
+
+function renderErrorPage () {
+    const main = document.querySelector('main')
+    const message = document.createElement('h2')
+
+
+    message.innerText = "kutzooi"
+    main.appendChild(message)
+    console.log("dikke error")
 }
