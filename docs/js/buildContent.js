@@ -12,7 +12,7 @@ function renderOverview (albums) {
 
             albumName.innerText = singleAlbum.name
             albumArt.src = image
-            main.appendChild(albumCard).href = '#albumID=' + albumId
+            main.appendChild(albumCard).href = '#albumID/' + albumId
             albumCard.appendChild(albumName)
             albumCard.appendChild(albumArt)
         }
@@ -28,14 +28,15 @@ function renderDetail (album) {
     const published = document.createElement('p')
     const trackList = document.createElement('ul')
     const summary = document.createElement('p')
+    const backButton = document.createElement('a')
 
     //create variables with data from the last.fm api
     const artist = album.artist
     const albumTitle = album.name
     const image = album.image[4]['#text']
-    const publishedDate = album.wiki.published
+    const publishedDate = album.wiki ? album.wiki.published : ''
     const albumTracks = album.tracks.track
-    const albumSummary = album.wiki.content
+    const albumSummary = album.wiki ? album.wiki.content : ''
 
     //fill html elements with content from last.fm
     main.innerHTML = '';
@@ -43,6 +44,8 @@ function renderDetail (album) {
     albumName.innerText = albumTitle + ' - ' + artist
     published.innerText = publishedDate
     summary.innerHTML = albumSummary
+    backButton.innerText = 'back'
+    backButton.href = '/'
 
 
     albumTracks.forEach(function (track) {
@@ -53,6 +56,7 @@ function renderDetail (album) {
 
     //append elements to container
     main.appendChild(albumCard)
+    albumCard.appendChild(backButton)
     albumCard.appendChild(albumArt)
     albumCard.appendChild(albumName)
     albumCard.appendChild(published)

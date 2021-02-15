@@ -2,37 +2,38 @@ export { getData, getAlbumDetails }
 
 async function getData() {
     // set url
-    const url = 'https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=metalcore&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&format=json'
-    let allAlbums
+    const endpoint = 'https://ws.audioscrobbler.com/2.0/?'
+    const query = 'method=tag.gettopalbums&tag='
+    const genre = 'metalcore'
+    const key = '&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10'
+    const format = '&format=json'
+    const url = endpoint + query + genre + key + format
 
-    //get data from api
-    return fetch(url)
-        //turn response from the api into jason
-        .then(response => response.json())
-        .then(data => {
-            //unwrap the data from outer layers and return the album data
-            allAlbums = data.albums.album
-            return allAlbums
-    })
-        .catch(error => {
-            console.log(error)
-        })
+    //fetch data and format it to json
+    const response = await fetch(url)
+    const jsonResponse = await response.json()
+
+    //filter out albums without mbid and return albums
+    //without outer array layers
+    return jsonResponse.albums.album
+        .filter((album) => album.mbid)
 }
 
+//fetch single album information
 async function getAlbumDetails(mbid) {
-    const url = 'https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10&mbid=' + mbid + '&format=json'
-    let singleAlbum
+    //set up url
+    const endpoint = 'https://ws.audioscrobbler.com/2.0/?'
+    const query = 'method=album.getinfo'
+    const albumid = '&mbid=' + mbid
+    const key = '&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10'
+    const format = '&format=json'
+    const url = endpoint + query + key + albumid + format
 
-    return fetch(url)
-    //turn response from the api into jason
-        .then(response => response.json())
-        .then(data => {
-            //unwrap the data from outer layers and return the album data
-            singleAlbum = data.album
-            return singleAlbum
-        })
-        .catch(error => {
-            console.log(error)
-        })
+    //fetch data and format it to json
+    const response = await fetch(url)
+    const jsonResponse = await response.json()
 
+    //return single album information without
+    //outer array layer
+    return jsonResponse.album
 }
