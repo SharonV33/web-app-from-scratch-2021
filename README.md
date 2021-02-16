@@ -70,7 +70,7 @@ while navigating through the features of the app.
 ## Wishlist of features
 - [x] overview of albums based on data from api
 - [x] view album details based on selected album
-- [ ] filter albums with no mbid
+- [x] filter albums with no mbid
 - [ ] improved design
 - [ ] responsive layout
 - [ ] change genre

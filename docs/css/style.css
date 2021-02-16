@@ -36,7 +36,11 @@ a h2{
     position: absolute;
 }
 
-a:visited {
+h1 a {
+    text-decoration: none;
+}
+
+h1 a:visited {
     color: #ffffff;
     text-decoration: none;
 }
@@ -56,18 +60,27 @@ a:hover > h2 {
 
 /*single album styling*/
 main article {
-    grid-column: 2 / span 2;
+    grid-column: 2 / span 3;
     color: #ffffff;
     display: grid;
     grid-template-columns: 20vw 20vw 20vw;
-    grid-template-rows: 30vh 40vh;
+    grid-template-rows: 40vh 40vh;
     grid-row-gap: 3em;
     grid-column-gap: 3em;
     width: 80vw;
 }
-main a:first-of-type {
+.back {
     grid-column-start: 1;
     grid-row-start: 1;
+    justify-self: end;
+    margin-right: 2em;
+
+    /*fancy back arrow*/
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid white;
 }
 
 article h2,
@@ -78,14 +91,20 @@ article p:first-of-type {
     align-self: start;
 }
 
+article ul {
+    grid-column-start: 3;
+}
+
 article p:first-of-type {
     margin-top: 5em;
 }
 
 article img {
-    height: 100%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    height: 15em;
 }
 
 article p:last-of-type {
-    grid-column:1 / span 2;
+    grid-column: 1 / span 2;
 }

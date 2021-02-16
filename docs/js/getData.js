@@ -8,12 +8,14 @@ async function getData() {
     const key = '&api_key=b0cbd53d2ea5b525c2a0447aa31fcd10'
     const format = '&format=json'
     const url = endpoint + query + genre + key + format
+    // console.log(url)
 
     //fetch data and format it to json
         const response = await fetch(url)
         const jsonResponse = await response.json()
 
-    if (!jsonRsponse.albums.album) {
+    // if the api returns a faulty result, throw the error
+    if (!jsonResponse.albums) {
         throw "unable to load albums"
     }
     //filter out albums without mbid and return albums

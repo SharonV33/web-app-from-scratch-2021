@@ -1,22 +1,30 @@
-export { renderOverview, renderDetail, renderErrorPage }
+export { renderOverview, renderDetail, renderErrorState }
 
 // render overview page with all albums
 function renderOverview (albums) {
-    albums.forEach(singleAlbum => {
-            const main = document.querySelector('main')
-            const albumCard = document.createElement('a')
-            const albumName = document.createElement('h2')
-            const albumArt = document.createElement('img')
-            const image = singleAlbum.image[3]['#text']
-            const albumId = singleAlbum.mbid
 
-            albumName.innerText = singleAlbum.name
-            albumArt.src = image
-            main.appendChild(albumCard).href = '#albumID/' + albumId
-            albumCard.appendChild(albumName)
-            albumCard.appendChild(albumArt)
-        }
-    )
+    const main = document.querySelector('main')
+
+    //for each item in the albums array, create an album card
+    //and fill it with data from that album
+    albums.forEach(singleAlbum => {
+        //create variables for all items
+        const albumCard = document.createElement('a')
+        const albumName = document.createElement('h2')
+        const albumArt = document.createElement('img')
+
+        //fill items with needed content
+        const image = singleAlbum.image[3]['#text']
+        const albumId = singleAlbum.mbid
+        albumName.innerText = singleAlbum.name
+        albumArt.src = image
+
+        //append album card to main container
+        //and all needed info per album to that album card
+        main.appendChild(albumCard).href = '#albumID/' + albumId
+        albumCard.appendChild(albumName)
+        albumCard.appendChild(albumArt)
+    })
 }
 
 function renderDetail (album) {
@@ -44,7 +52,7 @@ function renderDetail (album) {
     albumName.innerText = albumTitle + ' - ' + artist
     published.innerText = publishedDate
     summary.innerHTML = albumSummary
-    backButton.innerText = 'back'
+    backButton.className = 'back'
     backButton.href = '/'
 
 
@@ -65,18 +73,16 @@ function renderDetail (album) {
 
 }
 
-function renderErrorPage (message) {
+function renderErrorState (message) {
     const main = document.querySelector('main')
-    const message = document.createElement('h2')
+    const messageContainer = document.createElement('h2')
     const backButton = document.createElement('a')
 
 
-    message.innerText = message
-    backButton.innerText = 'back'
+    messageContainer.innerText = message
+    backButton.className = 'back'
     backButton.href = '/'
 
-    main.appendChild(message)
+    main.appendChild(messageContainer)
     main.appendChild(backButton)
-
-    // console.log("dikke error")
 }
