@@ -13,9 +13,14 @@ function handleRoutes() {
         }
         //if the fetch throws an error, load error state
         catch {
-            console.log(await getData())
             renderErrorState('there was an error loading the content, please try again later')
         }
+
+    })
+
+    routie('gif', async function() {
+        const getGifs = await fetchGifsfromApi()
+        renderGifpagina(getGifs)
 
     })
     //if url contains /albumID/.... build detail page based on the id in the url
@@ -27,7 +32,8 @@ function handleRoutes() {
         }
         //if the fetch throws an error, load error state
         catch (error){
-            renderErrorState('there was an error trying to show you data about the selected album, please try again later')
+            renderErrorState('there was an error trying to show you data about the selected album, ' +
+                'please try again later')
         }
     })
 }
