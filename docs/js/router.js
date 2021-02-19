@@ -25,7 +25,7 @@ function handleRoutes() {
             renderDetail(singleAlbum)
         }
         //if the fetch throws an error, load error state
-        catch (error){
+        catch (){
             renderErrorState('there was an error trying to show you data about the selected album, ' +
                 'please try again later')
         }

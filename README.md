@@ -3,8 +3,8 @@
 [live link](http://web-app-from-scratch-2021.sharonv33.vercel.app/)
 
 ## about the app
-This app will help you to discover new and awesome music in the best genre there is, metal. Browse through the 
-latest and most popular thrash albums there are and get inspired by new bands. 
+This app will help you to discover new and awesome music in the best genre there is, metalcore. Browse through the 
+latest and most popular albums there are and get inspired by new bands and albums. 
 
 <img src="https://i.ibb.co/dW3NVFC/smaller.jpg">
 

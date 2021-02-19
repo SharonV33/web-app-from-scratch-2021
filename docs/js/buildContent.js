@@ -78,7 +78,7 @@ function renderErrorState (message) {
     const messageContainer = document.createElement('h2')
     const backButton = document.createElement('a')
 
-
+    main.innerHTML = '';
     messageContainer.innerText = message
     backButton.className = 'back'
     backButton.href = '/'
