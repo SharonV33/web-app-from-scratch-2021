@@ -17,12 +17,6 @@ function handleRoutes() {
         }
 
     })
-
-    routie('gif', async function() {
-        const getGifs = await fetchGifsfromApi()
-        renderGifpagina(getGifs)
-
-    })
     //if url contains /albumID/.... build detail page based on the id in the url
     routie('albumID/:id', async function(id) {
         //try and fetch data, if this succeeds, build detail page

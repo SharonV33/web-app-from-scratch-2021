@@ -1,3 +1,4 @@
+/*general body styling*/
 body {
     background-color: #000000;
 }
@@ -18,7 +19,7 @@ main {
 }
 
 /*styling of album tiles, these are generated in JS*/
-main a{
+main a {
     position: relative;
     display: flex;
     justify-content: center;
@@ -30,7 +31,7 @@ main a img {
     width: 100%;
 }
 
-a h2{
+a h2 {
     visibility: hidden;
     transition: visibility, background-color 0.5s;
     position: absolute;
@@ -45,6 +46,7 @@ h1 a:visited {
     text-decoration: none;
 }
 
+/*create a nice on hover effect*/
 a:hover > h2 {
     visibility: visible;
     color: white;
@@ -58,7 +60,7 @@ a:hover > h2 {
 
 }
 
-/*single album styling*/
+/*detail page styling*/
 main article {
     grid-column: 2 / span 3;
     color: #ffffff;
@@ -109,7 +111,8 @@ article p:last-of-type {
     grid-column: 1 / span 2;
 }
 
-@media (max-width: 400px){
+/*add a responsive layout for mobile devices*/
+@media (max-width: 400px) {
     main {
         grid-template-columns: 1fr 1fr;
         width: 100vw;

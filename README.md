@@ -8,12 +8,12 @@ latest and most popular thrash albums there are and get inspired by new bands.
 
 <img src="https://i.ibb.co/dW3NVFC/smaller.jpg">
 
-##Tabe of content
-* installing
-* Usage and features
-* last.fm api
-* actor and interaction diagram
-* wishlist of features
+## Tabe of content
+* [installing](#installing)
+* [Usage and features](#usage-and-features)
+* [last.fm api](#last.fm-api)
+* [actor and interaction diagram](#actor-and-interaction-diagram)
+* [wishlist of features](#wishlist-of-features)
 
 ## installing
 clone the repo
@@ -71,8 +71,8 @@ while navigating through the features of the app.
 - [x] overview of albums based on data from api
 - [x] view album details based on selected album
 - [x] filter albums with no mbid
+- [x] responsive layout
 - [ ] improved design
-- [ ] responsive layout
 - [ ] change genre
 
 
