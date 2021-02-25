@@ -2,7 +2,6 @@ export { renderOverview, renderDetail, renderErrorState }
 
 // render overview page with all albums
 function renderOverview (albums) {
-
     const main = document.querySelector('main')
 
     //for each item in the albums array, create an album card
@@ -14,9 +13,9 @@ function renderOverview (albums) {
         const albumArt = document.createElement('img')
 
         //fill items with needed content
-        const image = singleAlbum.image[3]['#text']
+        const image = singleAlbum.image
         const albumId = singleAlbum.mbid
-        albumName.innerText = singleAlbum.name
+        albumName.innerText = singleAlbum.title
         albumArt.src = image
 
         //append album card to main container
@@ -41,10 +40,10 @@ function renderDetail (album) {
     //create variables with data from the last.fm api
     const artist = album.artist ? album.artist : ''
     const albumTitle = album.name ? album.name : ''
-    const image = album.image[4]['#text'] ? album.image[4]['#text'] : ''
-    const publishedDate = album.wiki ? album.wiki.published : ''
+    const image = album.image[4]['#text']
+    const publishedDate = album.wiki.published ? album.wiki.published : ''
     const albumTracks = album.tracks.track
-    const albumSummary = album.wiki ? album.wiki.content : ''
+    const albumSummary = album.wiki.summary ? album.wiki.summary : ''
 
     //fill html elements with content from last.fm
     main.innerHTML = '';

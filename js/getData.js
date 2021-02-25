@@ -1,6 +1,6 @@
-export { getData, getAlbumDetails }
+export { getAlbums, getAlbumDetails }
 
-async function getData() {
+async function getAlbums() {
     // set url
     const endpoint = 'https://ws.audioscrobbler.com/2.0/?'
     const query = 'method=tag.gettopalbums&tag='
@@ -18,10 +18,17 @@ async function getData() {
     if (!jsonResponse.albums) {
         throw "unable to load albums"
     }
-    //filter out albums without mbid and return albums
-    //without outer array layers
+    //filter out albums without mbid
+    //remove unused item values
     return jsonResponse.albums.album
         .filter((album) => album.mbid)
+        .map((item) => {
+            return {
+                title: item.name,
+                mbid: item.mbid,
+                image: item.image[3]['#text']
+            }
+        })
 }
 
 //fetch single album information
@@ -34,6 +41,7 @@ async function getAlbumDetails(mbid) {
     const format = '&format=json'
     const url = endpoint + query + key + albumid + format
 
+
     //fetch data and format it to json
     const response = await fetch(url)
     const jsonResponse = await response.json()
@@ -42,7 +50,19 @@ async function getAlbumDetails(mbid) {
    if(!jsonResponse.album) {
        throw "album not found"
     }
-    //return single album information without
-    //outer array layer
+
+    // //return single album information without
+    // //outer array layer
+    // const data = jsonResponse.album.map((item) => {
+    //     return {
+    //         title: item.name,
+    //         artist: item.artist,
+    //         image: item.image[4]['#text'],
+    //         published: item.wiki.published,
+    //         wiki: item.wiki.content,
+    //         tracks: item.tracks.track
+    //     }
+    // })
+
     return jsonResponse.album
 }

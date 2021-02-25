@@ -1,4 +1,4 @@
-import { getAlbumDetails, getData } from './getData.js'
+import { getAlbumDetails, getAlbums} from './getData.js'
 import { renderDetail, renderOverview, renderErrorState } from './buildContent.js'
 
 handleRoutes()
@@ -8,7 +8,7 @@ function handleRoutes() {
     routie('', async function() {
         //try and fetch data, when this is succesfull, build the overview page with fetched data
         try {
-            const allAlbums = await getData()
+            const allAlbums = await getAlbums()
             renderOverview(allAlbums)
         }
         //if the fetch throws an error, load error state
