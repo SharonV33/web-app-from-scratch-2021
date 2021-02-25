@@ -61,11 +61,11 @@ The main actor focuses on including all the other actors and calling the router.
 calls the correct functions in the getData and buildContent actors based on the desired content. The getData actor has two
 functions in it, one to fetch all the albums and one to fetch information about a single album. Finally, the buildContent actor
 builds up the HTML to show the desired content based on the url.
-<img src="https://i.ibb.co/g9nB6Bg/image.png" alt="actor diagram">
+<img src="https://i.ibb.co/bgD2r2P/Screenshot-2021-02-25-at-13-40-22.png" alt="actor diagram">
 
 With my interaction diagram I show how the user goes through the app. You can clearly see the path the user walks
 while navigating through the features of the app.
-<img src="https://i.ibb.co/12STb0G/image.png" alt="interaction diagram">
+<img src="https://i.ibb.co/3zWkhpd/actor.png" alt="interaction diagram">
 
 ## Wishlist of features
 - [x] overview of albums based on data from api
