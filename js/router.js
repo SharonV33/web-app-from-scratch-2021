@@ -1,7 +1,7 @@
 import { getAlbumDetails, getData } from './getData.js'
 import { renderDetail, renderOverview, renderErrorState } from './buildContent.js'
 
-export { handleRoutes }
+handleRoutes()
 
 function handleRoutes() {
     //if url has no additional text
@@ -25,7 +25,7 @@ function handleRoutes() {
             renderDetail(singleAlbum)
         }
         //if the fetch throws an error, load error state
-        catch (){
+        catch {
             renderErrorState('there was an error trying to show you data about the selected album, ' +
                 'please try again later')
         }
