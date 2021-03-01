@@ -74,6 +74,7 @@ while navigating through the features of the app.
 - [x] responsive layout
 - [ ] improved design
 - [ ] change genre
+- [ ] save favourite albums
 
 
 MIT License
