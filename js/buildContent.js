@@ -1,4 +1,4 @@
-export { renderOverview, renderDetail, renderErrorState }
+export { renderOverview, renderDetail, renderErrorState, renderLoader, removeLoader }
 
 // render overview page with all albums
 function renderOverview (albums) {
@@ -33,20 +33,22 @@ function renderDetail (album) {
     const albumName = document.createElement('h2')
     const albumArt = document.createElement('img')
     const published = document.createElement('p')
-    const trackList = document.createElement('ul')
+    const trackList = document.createElement('ol')
     const summary = document.createElement('p')
     const backButton = document.createElement('a')
 
+
     //create variables with data from the last.fm api
+    //if data is unavailable, leave blank
     const artist = album.artist ? album.artist : ''
     const albumTitle = album.name ? album.name : ''
-    const image = album.image[4]['#text']
-    const publishedDate = album.wiki.published ? album.wiki.published : ''
-    const albumTracks = album.tracks.track
     const albumSummary = album.wiki.summary ? album.wiki.summary : ''
+    const publishedDate = album.wiki.published ? album.wiki.published : ''
+    const image = album.image[4]['#text']
+    const albumTracks = album.tracks.track
 
     //fill html elements with content from last.fm
-    main.innerHTML = '';
+    main.innerHTML = ''
     albumArt.src = image
     albumName.innerText = albumTitle + ' - ' + artist
     published.innerText = publishedDate
@@ -55,6 +57,7 @@ function renderDetail (album) {
     backButton.href = '/'
 
 
+    //create a list of tracks
     albumTracks.forEach(function (track) {
         let li = document.createElement('li')
         trackList.appendChild(li)
@@ -70,6 +73,18 @@ function renderDetail (album) {
     albumCard.appendChild(trackList)
     albumCard.appendChild(summary)
 
+}
+
+function renderLoader() {
+    const main = document.querySelector('main')
+    const span = document.createElement('span')
+    main.appendChild(span).innerText = "loading"
+}
+
+function removeLoader() {
+    const main = document.querySelector('main')
+    const span = document.querySelector('span')
+    main.removeChild(span)
 }
 
 function renderErrorState (message) {

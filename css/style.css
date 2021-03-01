@@ -1,6 +1,7 @@
 /*general body styling*/
 body {
     background-color: #000000;
+    font-family: sans-serif;
 }
 
 h1 {
@@ -16,6 +17,11 @@ h2 {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+main span:first-of-type {
+    grid-row: 1 / 6;
+    color: white;
 }
 
 /*styling of album tiles, these are generated in JS*/
@@ -93,8 +99,12 @@ article p:first-of-type {
     align-self: start;
 }
 
-article ul {
+article ol {
     grid-column-start: 3;
+}
+
+article ol li {
+    margin-bottom: 0.5em;
 }
 
 article p:first-of-type {
