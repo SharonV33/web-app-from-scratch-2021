@@ -126,7 +126,6 @@ article p:last-of-type {
     main {
         grid-template-columns: 1fr 1fr;
         width: 100vw;
-
         overflow-X: hidden;
     }
 

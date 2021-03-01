@@ -7,6 +7,7 @@ function handleRoutes() {
     //if url has no additional text
     routie('', async function() {
         //try and fetch data, when this is succesfull, build the overview page with fetched data
+        //before fetch, render a loading message, after fetch remove this message
         try {
             renderLoader()
             const allAlbums = await getAlbums()
